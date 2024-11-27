@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Disease Detector</title>
+
+    <!-- Bootstrap files -->
+    <link href="{{ url_for('static',filename='/css/bootstrap.css') }}" rel="stylesheet">
+    <script src="{{ url_for('static',filename='/js/bootstrap.js') }}"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        .main {
+            height: 100%;
+            width: 100%;
+
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Plant Disease Detector</a>
+    </nav>
+    <!-- Main Content -->
+    <div class="main container">
+
+        <div class="input_box h-100 d-flex align-items-center justify-content-center">
+            <div class="container" style="width:50%">
+                <h3>Welcome to Plant Disease detector</h3>
+                <p>Plant Disease Detector is a Deep Learning model which predicts whether your plant is healthy or not.
+                    Currently supported Plants are:</p>
+                <ul class="list-group list-group-flush" style="width:30%">
+                    <li class="list-group-item">Apple</li>
+                    <li class="list-group-item">Blueberry</li>
+                    <li class="list-group-item">Cherry</li>
+                    <li class="list-group-item">Corn</li>
+                    <li class="list-group-item">Grape</li>
+                    <li class="list-group-item">Orange</li>
+                    <li class="list-group-item">Peach</li>
+                    <li class="list-group-item">Pepper</li>
+                    <li class="list-group-item">Potato</li>
+                    <li class="list-group-item">Raspberry</li>
+                    <li class="list-group-item">Strawberry</li>
+                    <li class="list-group-item">Tomato</li>
+                </ul>
+            </div>
+            <form method="post" action="upload" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="image_submit">Please upload image of plant you want to check</label>
+                    <input type="file" class="upload_image_box form-control" accept=".jpg,.jpeg,.png" name="usr_img"
+                        required />
+                </div>
+
+                <button type="submit" name="image_submit" class="btn btn-primary">Submit</button>
+        </div>
+
+    </div>
+    </div>
+</body>
+
+</html>

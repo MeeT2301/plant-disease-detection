@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+
+     <!-- Bootstrap files -->
+     <link href="{{ url_for('static',filename='/css/bootstrap.css') }}" rel="stylesheet">
+     <script src="{{ url_for('static',filename='/js/bootstrap.js') }}"></script>
+     <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <style>
+        body,html{
+            height: 100%;
+            width: 100%;
+        }
+        .main
+        {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .disease_name,.disease_desc,.disease_remedy,.uploaded_image
+        {
+            
+            border: 1px solid green;
+        }
+        img {
+            display: block;
+            max-width: 256px;
+            max-height: 256px;
+            width: auto;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+     <!-- Navbar -->
+     <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Plant Disease Detector</a>
+    </nav>
+    <!-- Main Content -->
+    <div class="main container">
+            <div class="uploaded_image">
+                <img src={{ link_img }} alt="Uploaded Image" />
+            </div>
+            <div class="disease_name container">
+                <h3>Identified Disease</h3>
+                <p>{{ disease }}</p>
+            </div>
+            <div class="disease_desc container">
+                <h3>About the disease</h3>
+                <p>{{ description }}</p>
+            </div>
+            <div class="disease_remedy container">
+                <h3>Treatment</h3>
+                <p>{{ remedy }}</p>
+            </div>
+        </div>
+</body>
+</html>

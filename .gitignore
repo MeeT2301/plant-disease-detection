@@ -1,0 +1,5 @@
+
+*.pt
+plant_disease_model_1.pt
+ml_model/cnn_model.pkl
+ml_model/cnn_modelx.pkl
